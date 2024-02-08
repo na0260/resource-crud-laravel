@@ -35,14 +35,6 @@ class StudentController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Student $student)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Student $student)
@@ -66,6 +58,7 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+        $student->delete();
+        return redirect('/')->with('status','Student deleted successfully');
     }
 }
