@@ -30,7 +30,8 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Student::create($request->all());
+        return redirect('/')->with('status','Student created successfully');
     }
 
     /**

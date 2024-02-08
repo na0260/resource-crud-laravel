@@ -1,7 +1,8 @@
 <x-app tittle="create">
     <x-slot name="content">
         <h2 class="text-center">Create New Student</h2>
-        <form action="">
+        <form action="{{route('students.store')}}" method="post">
+            @csrf
             <div class="mb-3 mt-3">
                 <label for="FirstName" class="form-label">First Name:</label>
                 <input type="text" class="form-control" id="FirstName" placeholder="Enter Your First Name" name="FirstName">

@@ -1,11 +1,16 @@
 <x-app tittle="Home">
     <x-slot name="content">
-        <h2>Student Table<span class="float-end"><button class="btn btn-primary">Add New Student</button></span></h2>
+        <h2>Student Table<span class="float-end"><a href={{route('students.create')}} class="btn btn-primary">Add New Student</a></span></h2>
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
         <table class="table">
             <thead>
             <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
+                <th>First Name</th>
+                <th>Last Name</th>
                 <th>Action</th>
             </tr>
             </thead>
