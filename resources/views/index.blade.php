@@ -15,21 +15,20 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
-            </tr>
-            <tr>
-                <td>Mary</td>
-                <td>Moe</td>
-                <td>mary@example.com</td>
-            </tr>
-            <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-            </tr>
+            @foreach($students as $student)
+                <tr>
+                    <td>{{$student->FirstName}}</td>
+                    <td>{{$student->LastName}}</td>
+                    <td>
+                        <a href="{{route('students.edit', $student->id)}}" class="btn btn-primary">Edit</a>
+                        <form action="{{route('students.destroy', $student->id)}}" method="post" class="d-inline">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" value="Delete" class="btn btn-danger">
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
             </tbody>
         </table>
     </x-slot>

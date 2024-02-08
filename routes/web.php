@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Student;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 /*
@@ -14,7 +15,9 @@ use App\Http\Controllers\StudentController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('index', [
+        'students' => Student::all()
+    ]);
 });
 
 Route::resource('students', StudentController::class);
