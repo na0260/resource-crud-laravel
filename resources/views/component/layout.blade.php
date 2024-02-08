@@ -9,8 +9,8 @@
 </head>
 <body>
 
-<div class="container mt-3">
-    @yield('content')
+<div class="container">
+    {{$content ?? 'No data to show'}}
 </div>
 
 </body>
