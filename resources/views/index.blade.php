@@ -1,4 +1,4 @@
-<x-layout tittle="Home">
+<x-app tittle="Home">
     <x-slot name="content">
         <h2>Student Table</h2>
         <table class="table">
@@ -6,7 +6,7 @@
             <tr>
                 <th>Firstname</th>
                 <th>Lastname</th>
-                <th>Email</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -28,4 +28,4 @@
             </tbody>
         </table>
     </x-slot>
-</x-layout>
+</x-app>
