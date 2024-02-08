@@ -1,6 +1,6 @@
 <x-app tittle="Home">
     <x-slot name="content">
-        <h2>Student Table</h2>
+        <h2>Student Table<span class="float-end"><button class="btn btn-primary">Add New Student</button></span></h2>
         <table class="table">
             <thead>
             <tr>
