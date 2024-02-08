@@ -1,7 +1,7 @@
 <x-app tittle="edit">
     <x-slot name="content">
         <h2 class="text-center">Edit Student</h2>
-        <form action="{{route('students.update',$student->id)}}">
+        <form action="{{route('students.update',$student->id)}}" method="post">
             @csrf
             @method('PUT')
             <div class="mb-3 mt-3">

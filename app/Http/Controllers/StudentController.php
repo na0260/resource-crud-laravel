@@ -57,7 +57,8 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        $student->update($request->all());
+        return redirect('/')->with('status','Student updated successfully');
     }
 
     /**
