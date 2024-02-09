@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreStudent;
 use App\Models\Student;
-use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
@@ -28,9 +28,10 @@ class StudentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreStudent $request)
     {
-        Student::create($request->all());
+        $validated = $request->validated();
+        Student::create($validated);
         return redirect('/')->with('status','Student created successfully');
     }
 
@@ -47,9 +48,10 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Student $student)
+    public function update(StoreStudent $request, Student $student)
     {
-        $student->update($request->all());
+        $validated = $request->validated();
+        $student->update($validated);
         return redirect('/')->with('status','Student updated successfully');
     }
 

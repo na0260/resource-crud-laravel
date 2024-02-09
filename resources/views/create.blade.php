@@ -5,12 +5,20 @@
             @csrf
             <div class="mb-3 mt-3">
                 <label for="FirstName" class="form-label">First Name:</label>
-                <input type="text" class="form-control" id="FirstName" placeholder="Enter Your First Name" name="FirstName">
+                <input type="text" class="form-control" id="FirstName" placeholder="Enter Your First Name"
+                       name="FirstName">
             </div>
+            @error('FirstName')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
             <div class="mb-3">
                 <label for="LastName" class="form-label">Last Name:</label>
-                <input type="text" class="form-control" id="LastName" placeholder="Enter Your Last Name" name="LastName">
+                <input type="text" class="form-control" id="LastName" placeholder="Enter Your Last Name"
+                       name="LastName">
             </div>
+            @error('LastName')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
             <input type="submit" value="Add" class="btn btn-primary">
         </form>
     </x-slot>
