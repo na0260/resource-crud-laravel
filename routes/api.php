@@ -22,3 +22,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('v1')->name('api.v1.')->group(function () {
     Route::apiResource('students', StudentController::class);
 });
+
+Route::fallback(function () {
+    return response()->json([
+        'status' => '404',
+        'message' => 'Not Found'
+    ], 404);
+})->name('api.fallback.404');
