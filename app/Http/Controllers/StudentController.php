@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreStudent;
 use App\Models\Student;
+use App\Http\Resources\Student as StudentResource;
 
 class StudentController extends Controller
 {
@@ -12,8 +13,9 @@ class StudentController extends Controller
      */
     public function index()
     {
+        $students = StudentResource::collection(Student::all());
         return view('index', [
-            'students' => Student::all()
+            'students' => $students
         ]);
     }
 
